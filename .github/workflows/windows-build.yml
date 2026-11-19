@@ -15,6 +15,7 @@ jobs:
       - name: Download project
         uses: actions/checkout@v4
 
+
       - name: Install Qt 6.12
         uses: jurplel/install-qt-action@v4
         with:
@@ -23,6 +24,8 @@ jobs:
           target: 'desktop'
           arch: 'win64_msvc2022_64'
           modules: 'qtwebengine'
+          aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@refs/pull/1000/head'
+
 
       - name: Configure CMake
         run: >
