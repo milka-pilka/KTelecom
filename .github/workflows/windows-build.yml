@@ -23,7 +23,7 @@ jobs:
           host: 'windows'
           target: 'desktop'
           arch: 'win64_msvc2022_64'
-          modules: 'qtwebengine'
+          modules: 'qtwebengine qtwebchannel qttasktree'
           aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@refs/pull/1000/head'
 
 
