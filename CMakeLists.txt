@@ -28,7 +28,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(KTelecom1
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        Router.h Router.cpp
         Measurement.h Measurement.cpp
         NetworkAnalyzer.h NetworkAnalyzer.cpp
         GarchProcess.h GarchProcess.cpp
@@ -42,8 +41,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         AlertManager.h AlertManager.cpp
         AlertNotification.h AlertNotification.cpp
         theme.qss
-        .git
-
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET KTelecom1 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
