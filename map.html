@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>K-Telecom Network Map</title>
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #18232D;
+        }
+
+        .leaflet-container {
+            background: #18232D;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+    // Создаём карту Екатеринбурга
+    const map = L.map('map').setView(
+        [56.8389, 60.6057],
+        11
+    );
+
+    // Подключаем OpenStreetMap
+    L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap contributors'
+        }
+    ).addTo(map);
+
+// Хранилище маркеров маршрутизаторов
+const routerMarkers = {};
+
+// Цвет маркера в зависимости от состояния
+function getStatusColor(status) {
+    switch (status) {
+        case "OK":
+            return "#34D399";
+
+        case "WARNING":
+            return "#FBBF24";
+
+        case "CRITICAL":
+            return "#F87171";
+
+        default:
+            return "#9CA3AF";
+    }
+}
+
+// Обновление маркеров на карте
+window.updateRouters = function(routers) {
+
+    routers.forEach(router => {
+
+        const color = getStatusColor(router.status);
+
+        // Если маркер уже существует — обновляем его
+        if (routerMarkers[router.id]) {
+
+            routerMarkers[router.id].setLatLng([
+                router.latitude,
+                router.longitude
+            ]);
+
+            routerMarkers[router.id].setStyle({
+                color: color,
+                fillColor: color
+            });
+
+        } else {
+
+            // Создаём новый маркер
+            routerMarkers[router.id] = L.circleMarker(
+                [
+                    router.latitude,
+                    router.longitude
+                ],
+                {
+                    radius: 8,
+                    color: color,
+                    fillColor: color,
+                    fillOpacity: 0.9,
+                    weight: 2
+                }
+            ).addTo(map);
+
+        }
+
+        // Всплывающая информация
+        routerMarkers[router.id].bindPopup(
+            `<b>${router.name}</b><br>
+             Location: ${router.location}<br>
+             Status: ${router.status}`
+        );
+
+    });
+
+};
+</script>
+
+</body>
+</html>

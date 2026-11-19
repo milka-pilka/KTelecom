@@ -1,0 +1,354 @@
+
+/* =================================
+   K-TELECOM — CORPORATE THEME
+   ================================= */
+
+/* Основная палитра:
+   Primary:   #C82058
+   Background:#FFFFFF
+   Text:      #282828
+   Secondary: #F2F4F6
+*/
+
+QMainWindow {
+    background-color: #FFFFFF;
+    color: #282828;
+    font-family: "Arial";
+}
+
+/* Основные области */
+
+#sidebarPanel {
+    background-color: #FFFFFF;
+    border-right: 1px solid #DDE2E7;
+}
+
+#workspacePanel {
+    background-color: #F7F8FA;
+}
+
+/* Верхняя панель */
+
+#systemStatusLabel {
+    background-color: #FFFFFF;
+    color: #282828;
+    border-bottom: 1px solid #DDE2E7;
+    font-weight: bold;
+}
+
+/* Заголовки */
+
+#pageTitleLabel {
+    color: #282828;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Навигационные кнопки */
+
+QPushButton {
+    background-color: transparent;
+    color: #383838;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 14px;
+}
+
+QPushButton:hover {
+    background-color: #FCEAF0;
+    color: #C82058;
+}
+
+QPushButton:pressed {
+    background-color: #F5D5E0;
+}
+
+/* Карточки */
+
+QFrame {
+    border-radius: 9px;
+}
+
+/* Таблицы */
+
+QTableWidget {
+    background-color: #FFFFFF;
+    color: #282828;
+    border: 1px solid #DDE2E7;
+    gridline-color: #E8EBEF;
+    selection-background-color: #F8DCE6;
+    selection-color: #282828;
+    outline: none;
+}
+
+QHeaderView::section {
+    background-color: #F2F4F6;
+    color: #555555;
+    border: none;
+    border-bottom: 1px solid #DDE2E7;
+    padding: 11px;
+    font-weight: bold;
+}
+
+QTableWidget::item {
+    padding: 8px;
+    border-bottom: 1px solid #EEF0F3;
+}
+
+/* Поля выбора */
+
+QComboBox {
+    background-color: #FFFFFF;
+    color: #282828;
+    border: 1px solid #DDE2E7;
+    border-radius: 6px;
+    padding: 7px;
+}
+
+QComboBox:hover {
+    border: 1px solid #C82058;
+}
+
+/* Поля ввода */
+
+QLineEdit {
+    background-color: #FFFFFF;
+    color: #282828;
+    border: 1px solid #DDE2E7;
+    border-radius: 6px;
+    padding: 8px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #C82058;
+}
+
+/* Полосы прокрутки */
+
+QScrollBar:vertical {
+    background-color: #F2F4F6;
+    width: 8px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #C8CDD4;
+    border-radius: 4px;
+    min-height: 25px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #C82058;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+/* =================================
+   NAVIGATION
+   ================================= */
+
+QFrame#sidebarPanel {
+    background-color: #FFFFFF;
+    border-right: 1px solid #E5E5E5;
+}
+
+QPushButton[active="true"] {
+    background-color: #FCEAF0;
+    color: #C82058;
+    border-left: 4px solid #C82058;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #FCEAF0;
+    color: #C82058;
+}
+
+QPushButton:pressed {
+    background-color: #F5D5E0;
+    color: #A81749;
+}
+
+QStackedWidget {
+    background-color: #F7F8FA;
+    border: none;
+}
+
+/* Dashboard statistic cards */
+QFrame#frame,
+QFrame#frame_3,
+QFrame#frame_4,
+QFrame#frame_5 {
+    background-color: #FFFFFF;
+    border: 1px solid #DDE2E7;
+    border-radius: 12px;
+}
+
+/* Card values */
+QLabel#totalRoutersValue,
+QLabel#okRoutersValue,
+QLabel#mediumRoutersValue,
+QLabel#criticalRoutersValue {
+    color: #282828;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Card titles */
+QLabel#totalRoutersTitle,
+QLabel#okRoutersTitle,
+QLabel#mediumRoutersTitle,
+QLabel#criticalRoutersTitle {
+    color: #777777;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/* Routers table */
+QTableWidget#routersTableWidget {
+    background-color: #FFFFFF;
+    alternate-background-color: #F7F8FA;
+    color: #282828;
+    border: 1px solid #DDE2E7;
+    border-radius: 10px;
+    gridline-color: #E8EBEF;
+    selection-background-color: #FCEAF0;
+    selection-color: #282828;
+    font-size: 12px;
+    outline: none;
+}
+
+QTableWidget#routersTableWidget::item {
+    padding: 8px;
+    border: none;
+}
+
+QTableWidget#routersTableWidget::item:selected {
+    background-color: #FCEAF0;
+    color: #282828;
+}
+
+QHeaderView::section {
+    background-color: #F2F4F6;
+    color: #555555;
+    border: none;
+    border-bottom: 1px solid #DDE2E7;
+    padding: 10px 8px;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+/* Analytics router selector */
+QComboBox#routerSelector {
+    background-color: #FFFFFF;
+    color: #282828;
+    border: 1px solid #DDE2E7;
+    border-radius: 8px;
+    padding: 8px 12px;
+    min-height: 24px;
+    font-size: 12px;
+}
+
+QComboBox#routerSelector:hover {
+    border: 1px solid #C82058;
+}
+
+QComboBox#routerSelector:focus {
+    border: 1px solid #C82058;
+}
+
+QComboBox#routerSelector QAbstractItemView {
+    background-color: #FFFFFF;
+    color: #282828;
+    selection-background-color: #FCEAF0;
+    selection-color: #C82058;
+    border: 1px solid #DDE2E7;
+    outline: none;
+    padding: 4px;
+}
+
+/* Map information cards */
+QFrame#totalRoutersCard,
+QFrame#onlineRoutersCard,
+QFrame#alertsCard {
+    background-color: #FFFFFF;
+    border: 1px solid #DDE2E7;
+    border-radius: 12px;
+}
+
+/* Map card values */
+QLabel#totalRoutersValue,
+QLabel#onlineRoutersValue,
+QLabel#alertsValue {
+    color: #282828;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Map card titles */
+QLabel#totalRoutersTitle,
+QLabel#onlineRoutersTitle,
+QLabel#alertsTitle {
+    color: #777777;
+    font-size: 12px;
+}
+
+/* Map container */
+QFrame#mapContainer {
+    background-color: #FFFFFF;
+    border: 1px solid #DDE2E7;
+    border-radius: 12px;
+}
+
+/* Alerts table */
+QTableWidget#alertsTableWidget {
+    background-color: #FFFFFF;
+    alternate-background-color: #F7F8FA;
+    color: #282828;
+    border: 1px solid #DDE2E7;
+    border-radius: 10px;
+    gridline-color: #E8EBEF;
+    selection-background-color: #FCEAF0;
+    selection-color: #282828;
+    font-size: 12px;
+    outline: none;
+}
+
+QTableWidget#alertsTableWidget::item {
+    padding: 8px;
+    border: none;
+}
+
+QTableWidget#alertsTableWidget::item:selected {
+    background-color: #FCEAF0;
+    color: #282828;
+}
+
+/* Reports statistic cards */
+QFrame#totalEventsCard,
+QFrame#warningsCard,
+QFrame#criticalEventsCard {
+    background-color: #FFFFFF;
+    border: 1px solid #DDE2E7;
+    border-radius: 12px;
+}
+
+/* Reports card values */
+QLabel#totalEventsValue,
+QLabel#warningsValue,
+QLabel#criticalEventsValue {
+    color: #282828;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Reports card titles */
+QLabel#totalEventsTitle,
+QLabel#warningsTitle,
+QLabel#criticalEventsTitle {
+    color: #777777;
+    font-size: 12px;
+}
