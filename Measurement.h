@@ -2,10 +2,11 @@
 #define MEASUREMENT_H
 
 #include <QDateTime>
-
+//собираем всю инфу по роутеру для таблицы(всего их будет 10 для кейса)
 class Measurement
 {
 public:
+    //констркутор
     Measurement(
         int routerId,
         double ping,

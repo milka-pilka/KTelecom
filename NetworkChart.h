@@ -6,7 +6,7 @@
 #include <QString>
 #include <QColor>
 #include <QDateTime>
-
+//библиотека для графика трафика
 class NetworkChart : public QWidget
 {
 public:
@@ -19,7 +19,7 @@ public:
     void setTimeData(const QVector<QDateTime>& timeData);
 
 protected:
-    void paintEvent(QPaintEvent *event) override;
+    void paintEvent(QPaintEvent *event) override;//описываем дизайн нашего графика
 
 private:
     QVector<double> m_data;

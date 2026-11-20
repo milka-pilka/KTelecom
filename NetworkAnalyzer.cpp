@@ -2,6 +2,7 @@
 
 RouterStatus NetworkAnalyzer::analyze(const Measurement& measurement)
 {
+    //МЕТРИКИ ПО КОТОРЫМ МЫ РАЗБИВАЕМ РОУТЕРЫ НА 3 КАТЕГОРИИ
     if (measurement.getPing() < 0 ||
         measurement.getdownloadSpeed() < 0 ||
         measurement.getuploadSpeed() < 0 ||

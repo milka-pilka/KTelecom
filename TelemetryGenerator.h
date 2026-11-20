@@ -1,4 +1,4 @@
-
+//генератор значений в роутерах
 #ifndef TELEMETRYGENERATOR_H
 #define TELEMETRYGENERATOR_H
 

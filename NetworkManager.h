@@ -1,4 +1,3 @@
-
 #ifndef NETWORKMANAGER_H
 #define NETWORKMANAGER_H
 
@@ -6,7 +5,7 @@
 #include "Measurement.h"
 #include "TelemetryGenerator.h"
 #include "ScenarioController.h"
-
+//Библиотека для получения списка всех роутеров
 #include <vector>
 
 class NetworkManager

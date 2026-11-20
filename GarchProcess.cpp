@@ -34,6 +34,7 @@ GarchProcess::GarchProcess(
 
 double GarchProcess::next()
 {
+    //дикая форула нашей функции
     double variance =
         m_omega
         + m_alpha * m_previousResidual * m_previousResidual

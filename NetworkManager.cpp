@@ -13,7 +13,7 @@ struct RouterLocation
     double latitude;
     double longitude;
 };
-
+//задаем адреса
 const std::array<RouterLocation, 10> ROUTER_LOCATIONS =
     {{
         {"Проспект Космонавтов", 56.901746, 60.613991},
@@ -77,7 +77,7 @@ NetworkManager::NetworkManager()
             );
     }
 }
-
+//постоянно обновляем данные о маршрутизаторах
 void NetworkManager::update()
 {
     // Проходим по всем маршрутизаторам

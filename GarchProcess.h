@@ -2,10 +2,11 @@
 #define GARCHPROCESS_H
 
 #include<random>
-
+//Класс отвечающий за нашу задающую функцию, создание зерна сида, а также ско
 class GarchProcess
 {
 public:
+    //конструктор
     GarchProcess(
         double omega,
         double alpha,
@@ -21,7 +22,7 @@ private:
     double m_previousResidual;
     double m_previousVariance;
 
-    std::mt19937 m_engine;
+    std::mt19937 m_engine;//генератор случайных значений
 
     std::normal_distribution<double> m_normalDistribution;
 

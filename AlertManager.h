@@ -18,7 +18,7 @@ public:
 
 private:
     // Последние известные статусы маршрутизаторов
-    QHash<int, RouterStatus> m_previousStatuses;
+    QHash<int, RouterStatus> m_previousStatuses;//словарь: ключ - значение;хэш таблица одним словом
 
     // История оповещений
     QList<Alert> m_alerts;

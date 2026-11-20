@@ -14,12 +14,12 @@ void AlertManager::checkRouter(const Router& router)
     }
 
     const RouterStatus previousStatus =
-        m_previousStatuses.value(routerId);
+        m_previousStatuses.value(routerId);//манипуляции для использование переменных в области private
 
     // Если состояние не изменилось, ничего не делаем
     if (previousStatus == currentStatus)
         return;
-
+    //Объявляем переменныые строчного типа
     QString event;
     QString severity;
     QString description;
@@ -61,6 +61,7 @@ void AlertManager::checkRouter(const Router& router)
     // Создаём событие, если переход обработан
     if (!event.isEmpty())
     {
+        //задаем переменную класса Alert, опираясь на шаблон из констркуктора Alert.h
         Alert alert(
             router.getId(),
             router.getName(),
@@ -73,7 +74,7 @@ void AlertManager::checkRouter(const Router& router)
     }
 
     // Запоминаем новое состояние
-    m_previousStatuses[routerId] = currentStatus;
+    m_previousStatuses[routerId] = currentStatus;//заменили переменную прошлого состояния на состоянии в данный момент
 }
 
 const QList<Alert>& AlertManager::getAlerts() const

@@ -1,6 +1,6 @@
 #include "Measurement.h"
 
-
+//собираем конструктор а также берем данные с генератора динамики нашей сети и инфы с роутера
 Measurement::Measurement(
     int routerId,
     double ping,

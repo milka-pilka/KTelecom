@@ -6,6 +6,7 @@
 #include <algorithm>
 
 NetworkChart::NetworkChart(QWidget *parent)
+    //задаем цвет линии/название графика
     : QWidget(parent),
     m_title("NETWORK CHART"),
     m_unit(""),
@@ -14,7 +15,7 @@ NetworkChart::NetworkChart(QWidget *parent)
     setMinimumHeight(220);
     setMinimumWidth(300);
 }
-
+//Сеттеры
 void NetworkChart::setData(const QVector<double>& data)
 {
     m_data = data;
@@ -44,7 +45,7 @@ void NetworkChart::setLineColor(const QColor& color)
     m_lineColor = color;
     update();
 }
-
+//дизайн нашего графика
 void NetworkChart::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);

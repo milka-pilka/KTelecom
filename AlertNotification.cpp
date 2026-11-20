@@ -13,7 +13,7 @@
         const QString& severity,
         QWidget* parent
         )
-        : QFrame(parent)
+        : QFrame(parent)//как то работает по страннм причинам
     {
         // Размер уведомления
         setFixedSize(300, 88);
@@ -30,13 +30,13 @@
 
         // Оформление самого уведомления
         setStyleSheet(QString(
-                          "QFrame {"
+                          "QFrame {" // задаем характеристики всплывающего окна
                           "background-color: #FFFFFF;"
                           "border: 1px solid %1;"
                           "border-left: 5px solid %1;"
                           "border-radius: 10px;"
                           "}"
-                          "QLabel {"
+                          "QLabel {"//характерестики надписей
                           "background: transparent;"
                           "border: none;"
                           "color: #282828;"
@@ -53,7 +53,7 @@
         auto* titleLabel = new QLabel(title, this);
 
         titleLabel->setStyleSheet(
-            QString(
+            QString(//характерестики надписи
                 "color: %1;"
                 "font-weight: bold;"
                 "font-size: 12px;"
@@ -79,7 +79,7 @@
         closeButton->setVisible(true);
         closeButton->setFlat(false);
 
-
+        //ХАРАКТЕРИСТИКИ ЗАКРЫВАЮЩЕЙ КНОПКИ
         closeButton->setStyleSheet(R"(
             QPushButton {
                 color: #777777;

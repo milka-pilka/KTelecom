@@ -3,7 +3,7 @@
 
 #include "Measurement.h"
 #include "Router.h"
-
+//маленький класс отвечающий за состоянии роутера по показателям его метрик
 class NetworkAnalyzer
 {
 public:
